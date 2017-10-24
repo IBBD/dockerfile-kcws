@@ -11,8 +11,8 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 # 建议：
 # 代码挂载到：/var/www/kcws/
 # 数据挂载到：/var/www/data/
-RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-    && mkdir -p /var/www/
+#RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    #&& mkdir -p /var/www/
 
 # 终端设置
 # 执行php-fpm时，默认值是dumb，这时在终端操作时可能会出现：terminal is not fully functional
