@@ -23,6 +23,7 @@ RUN mkdir -p /usr/share/man/man1 \
     && curl https://bazel.build/bazel-release.pub.gpg -o bazel-release.pub.gpg \
     && apt-key add bazel-release.pub.gpg \
     && rm bazel-release.pub.gpg \
+    && apt-get update \
     && apt-get install -y --no-install-recommends \
         bazel \
     && apt-get autoremove \
