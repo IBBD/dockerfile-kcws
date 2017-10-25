@@ -20,7 +20,9 @@ RUN mkdir -p /usr/share/man/man1 \
         gnupg \
         openjdk-8-jdk \
     && echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | tee /etc/apt/sources.list.d/bazel.list \
-    && curl https://bazel.build/bazel-release.pub.gpg | apt-key add - \
+    && curl https://bazel.build/bazel-release.pub.gpg -o bazel-release.pub.gpg \
+    && apt-key add bazel-release.pub.gpg \
+    && rm bazel-release.pub.gpg \
     && apt-get install -y --no-install-recommends \
         bazel \
     && apt-get autoremove \
