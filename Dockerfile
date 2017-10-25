@@ -11,7 +11,9 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 # 建议：
 # 代码挂载到：/var/www/kcws/
 # 数据挂载到：/var/www/data/
-RUN apt-get update \
+# 注意报错：update-alternatives: error: error creating symbolic link '/usr/share/man/man1/rmid.1.gz.dpkg-tmp': No such file or directory
+RUN mkdir -p /usr/share/man/man1 \
+    && apt-get update \
     && apt-get install -y --no-install-recommends \
         openjdk-8-jdk \
     && echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | tee /etc/apt/sources.list.d/bazel.list \
